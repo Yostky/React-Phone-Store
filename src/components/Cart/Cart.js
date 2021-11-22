@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from "react";
 import CartColumns from './CartColumns';
 import EmptyCart from './EmptyCart';
 import { ProductConsumer } from '../../assets/context';
 import CartList from './CartList';
 import CartTotals from './CartTotals';
 
-export default function Cart() {
+export default class Cart extends Component {
+    render() {
     return (
         <section>
             <ProductConsumer>
@@ -17,16 +18,17 @@ export default function Cart() {
                                 <div className='text-center'>Title</div>
                                 <CartColumns></CartColumns>
                                 <CartList value={value}/>
-                                <CartTotals value={value}></CartTotals>
+                                <CartTotals value={value} history={this.props.history}></CartTotals>
                             </React.Fragment>
                         );
                     } else {
                         return (
-                            <EmptyCart></EmptyCart>
+                            <EmptyCart/>
                         )
                     }
                 }}
             </ProductConsumer>
         </section>
     )
+}
 }
