@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ProductConsumer } from '../assets/context';
 import { StyledButton } from './StyledButton';
 import { Link } from 'react-router-dom';
+import { CloseButton } from 'react-bootstrap';
 
 export default class Modal extends Component {
     render() {
@@ -19,6 +20,11 @@ export default class Modal extends Component {
                             <div className='container'>
                                 <div className='row'>
                                     <div id='modal' className='col-8 col-md-6 col-lg-4 text-center text-capitalize mx-auto'>
+                                        <CloseButton 
+                                            className='closer' 
+                                            onClick={()=>{
+                                            closeModal();}}>
+                                        </CloseButton>
                                         <h5>Item added to the cart</h5>
                                         <img src={img} className='img-fluid' alt='product'/>
                                         <h5>{title}</h5>
@@ -57,8 +63,9 @@ const ModalContainer = styled.div`
     background: rgba(0,0,0,.3);
     position:fixed;
     display: flex;
-    justify-conent: center;
+    justify-content: center;
     align-items:center;
+    border-radius: 5px;
     #modal{
         background: white;
     }

@@ -11,8 +11,7 @@ export const NavigationBar = ()=> (
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav className='ms-auto'>
                     <Nav.Item><Link to='/'>Home</Link></Nav.Item>
-                    <Nav.Item><Link to='/about'>About</Link></Nav.Item>
-                    <Nav.Item><Link to='/contact'>Contact</Link></Nav.Item>
+                    <Nav.Item><Link to='/cart'>Cart</Link></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

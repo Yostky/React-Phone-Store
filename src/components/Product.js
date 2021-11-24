@@ -51,14 +51,16 @@ const ProductWrapper = styled.div`
         z-index: 2;
     }
     .card{
-        transition: all .15s linear;
-        border: 15px solid transparent;
-        border-image: url(${galaxy}) 30 round;
+        transition: all .25s linear;
+        border: 2px solid #acacac;
+        box-shadow: 10px 10px 5px grey;
+        // border-image: url(${galaxy}) 30 round;
+        
     }
     &:hover{
         .card{
-            border: 10px solid transparent;
-            border-image: url(${galaxy}) 20 round;
+            border: 10px solid #acacac;
+            // border-image: url(${galaxy}) 20 round;
             
         }
     }
@@ -67,7 +69,7 @@ const ProductWrapper = styled.div`
         overflow: hidden;
     }
     .card-img-top{
-        transition: .5s all linear;
+        transition: .25s all linear;
         margin-bottom: 15px;
     }
     .img-container:hover .card-img-top{
