@@ -6,7 +6,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 export const NavigationBar = ()=> (
     <Styles>
         <Navbar expand='lg'>
-            <Navbar.Brand href='/'> Code Life </Navbar.Brand>
+            <Navbar.Brand ><Link to='/'>Code Life</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav'/>
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav className='ms-auto'>

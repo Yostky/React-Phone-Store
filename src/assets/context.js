@@ -6,7 +6,11 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
  
     state = {
-        products: [],
+        products: {
+            phones:[],
+            tablets:[],
+            laptops:[],
+        },
         detailProduct: detailProduct,
         quantity: [],
         cart: [],
@@ -15,27 +19,50 @@ class ProductProvider extends Component {
         cartSubtotal: 0,
         cartTax: 0,
         cartTotal: 0,
-
     }
+
     componentDidMount() {
         this.addProducts();
     }
+    
     addProducts = () => {
-        let tempProducts= [];
-        storeProducts.forEach(item => {
+        let phones= [];
+        let tablets= [];
+        let laptops= [];
+        storeProducts.phones.forEach(item => {
             const singleItem = {...item};
-            tempProducts = [...tempProducts, singleItem];
+            phones = [...phones, singleItem];
+        }); 
+        storeProducts.tablets.forEach(item => {
+            const singleItem = {...item};
+            tablets = [...tablets, singleItem];
+        }); 
+        storeProducts.laptops.forEach(item => {
+            const singleItem = {...item};
+            laptops = [...laptops, singleItem];
         }); 
         this.setState(()=> {
-            return{products:tempProducts};
+            return{products:{tablets,phones,laptops}};
         });
     }
 
-    getItem =(id)=> {
-        const product = this.state.products.find(item => item.id === id);
-        return product;
-    }
 
+    getItem =(id)=> {
+        const phoneId = this.state.products.phones.find(item => item.id === id);
+        const tabletId = this.state.products.tablets.find(item => item.id === id);
+        const laptopId = this.state.products.laptops.find(item => item.id === id);
+        if (phoneId) {
+            const product = phoneId;
+            return product;
+        } else if (tabletId) {
+            const product = tabletId;
+            return product;
+        } else {
+            const product = laptopId;
+            return product;
+        }
+    }
+  
     openDetail = (id) => {
         const product = this.getItem(id);
         this.setState(()=> {
@@ -44,15 +71,16 @@ class ProductProvider extends Component {
     }
 
     addToCart = (id) => {
-        let tempProducts = [...this.state.products];
-        const index = tempProducts.indexOf(this.getItem(id));
-        const product = tempProducts[index];
+        let products = this.state.products;
+        const productValues = [...products.phones, ...products.tablets, ...products.laptops];
+        const index = productValues.indexOf(this.getItem(id));
+        const product = productValues[index];
         product.inCart = true;
         product.count = 1;
         const price = product.price;
         product.total = price;
         this.setState(()=> {
-            return{products: tempProducts, cart: [...this.state.cart, product]}
+            return{products: products, cart: [...this.state.cart, product]}
         }, ()=> {
             this.addTotals();
         })
@@ -64,12 +92,12 @@ class ProductProvider extends Component {
             return {modalProduct:product, modalOpen: true,}
         }) 
     }
+
     closeModal = () => {
         this.setState(()=>{
             return {modalOpen: false}
         })
     }
-    //send the ID to incre/decre from onClick, and push a quantity obj with the associated ID to the quantity array. Individually incre/decre with ID
 
     incrementQuantity = (id) => {
         let tempCart = [...this.state.cart];
@@ -84,13 +112,14 @@ class ProductProvider extends Component {
             this.addTotals();
         })
     }
+
     decrementQuantity = (id) => {
         let tempCart = [...this.state.cart];
         const chosenProduct = tempCart.find(item=>item.id === id);
         const index = tempCart.indexOf(chosenProduct);
         const product = tempCart[index];
-
         product.count = product.count - 1;
+        
         if(product.count === 0){
             this.removeItem(id);
         } else {
@@ -102,10 +131,11 @@ class ProductProvider extends Component {
             })
         }
     }
-    removeItem = (id) => {
-        let tempProducts = [...this.state.products];
-        let tempCart = [...this.state.cart];
 
+    removeItem = (id) => {
+        const products = this.state.products;
+        const tempProducts = [...products.phones, ...products.tablets, ...products.laptops];
+        let tempCart = [...this.state.cart];
         tempCart = tempCart.filter(item => item.id !== id);
         const index = tempProducts.indexOf(this.getItem(id));
         let removedProduct = tempProducts[index];
@@ -116,12 +146,13 @@ class ProductProvider extends Component {
         this.setState(()=>{
             return {
                 cart:[...tempCart], 
-                products:[...tempProducts]
+                products:products
             }
         }, ()=> {
             this.addTotals();
         })
     }
+
     clearCart = () =>{
         this.setState(()=>{
             return {cart:[]}
@@ -130,6 +161,7 @@ class ProductProvider extends Component {
             this.addTotals();
         })
     }
+
     addTotals = () => {
         let subTotal = 0;
         this.state.cart.map(item => (subTotal += item.total));

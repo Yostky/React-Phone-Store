@@ -36,3 +36,18 @@ function App() {
 
 export default App;
 
+/*
+-------------------------------------Finish by Wednesday Night---------------------------------------------------------
+- I need to have phones, tablets, and computers to display. Just copy and paste the data layout for the tablets and phones.
+- I need to get images for the tablets and computers
+- I need to add more sales pitches for the products in the store. (trending, discounted, new!) Add text alongside these topics to sell product
+- copy the products component so that I can have one for computers and tablets too
+- Rename the products components so that they are distinguishable between eachother
+- These changes need to be done for the home page
+- Add a footer with all of the links associated with footers
+- Add a jumbotron for the home page that isn't a star-spangled shit show
+- Change the navbar to something that reflects the homepage better
+- Add individual pictures to represent the item category itself (Phone picture: text + Link to the phone products, Tablet picture: text + link to the tablet products)
+
+
+*/ 

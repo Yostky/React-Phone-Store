@@ -65,8 +65,8 @@ const ModalContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items:center;
-    border-radius: 5px;
     #modal{
         background: white;
+        border-radius: 10px;
     }
 `;
