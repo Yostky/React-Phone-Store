@@ -20,7 +20,7 @@ export default class Product extends Component {
                                 onClick={()=> value.openDetail(id)}>
                                 <Link to='/details'>
                                     <div className="lead text-center">{title}</div>
-                                    <img src={img} alt='product' className='card-img-top pb-1'></img>
+                                    <img src={img} alt='product' className='card-img-top pb-1' style={{height:"25rem",width:"100%"}}></img>
                                 </Link>
                                 <div className='d-flex px-5 justify-content-around align-items-center card-footer mb-0'>
                                     <div className='fs-1'><strong>${price}</strong></div>
@@ -55,14 +55,10 @@ const ProductWrapper = styled.div`
         transition: all .25s linear;
         border: 2px solid #acacac;
         box-shadow: 10px 10px 5px grey;
-        // border-image: url(${galaxy}) 30 round;
-        
     }
     &:hover{
         .card{
-            border: 10px solid #acacac;
-            // border-image: url(${galaxy}) 20 round;
-            
+            border: 2px solid #00bfff;
         }
     }
     .img-container{

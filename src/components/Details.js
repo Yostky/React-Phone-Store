@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ProductConsumer } from '../assets/context';
 import { Link } from 'react-router-dom';
 import {StyledButton } from './StyledButton';
+// import styled from 'styled-components';
 
 export default class Details extends Component {
     render() {
@@ -18,7 +19,7 @@ export default class Details extends Component {
                             </div>    
                             <div className='row'>
                                 <div className='col-10 col-md-6 my-2 mx-auto'>
-                                    <img src={img} alt="phone"/>
+                                    <img src={img} alt="phone" style={{height:"30rem",width:"30rem"}}/>
                                     <h2 >Made By: <span className='text-uppercase'>{company}</span></h2>
                                     <h3 className='text-primary'>${price}</h3>
                                     <p>{info}</p>
@@ -40,3 +41,9 @@ export default class Details extends Component {
         )
     }
 }
+
+// const StyledImg = styled.img `
+//     width: inherit;
+//     height: inherit;
+//     object-fit: contain;
+// `;

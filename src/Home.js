@@ -20,3 +20,8 @@ export default function Home() {
         </React.Fragment>
     )
 }
+/*
+- This is an introductory page for the website. I want this to have a huge jumbotron with text ontop to set the stage that this is has tech products.
+- I want three pictures that depict a phone, tablet, and laptop to show off the categories. Add flashy animation.
+- 
+*/
