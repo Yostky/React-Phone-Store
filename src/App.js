@@ -10,7 +10,6 @@ import Details from './components/Details';
 import { Layout } from './components/Layout';
 // import {Link} from "react-router-dom";
 import {NavigationBar} from './components/NavigationBar';
-import { Jumbotron } from './components/Jumbotron';
 import Modal from './components/Modal';
 import Cart from './components/Cart/Cart';
 
@@ -18,7 +17,6 @@ function App() {
   return (
     <React.Fragment>
         <NavigationBar/>
-        <Jumbotron/>
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />

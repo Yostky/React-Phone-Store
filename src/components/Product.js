@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { BsFillCartPlusFill } from 'react-icons/bs';
 import { ProductConsumer } from '../assets/context';
-import galaxy from '../assets/galaxy.jpg';
+// import galaxy from '../assets/galaxy.jpg';
 import {StyledButton } from './StyledButton';
 
 export default class Product extends Component {

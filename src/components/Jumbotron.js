@@ -13,6 +13,8 @@ const Styles = styled.div`
         color: white;
         height: 200px;
         position: relative;
+        width: auto;
+        
     }
 `;
 
@@ -20,8 +22,8 @@ export const Jumbotron = ()=> (
     <Styles>
         <div className='Jumbo'>
             <Container>
-                <h1>Welcome</h1>
-                <p>Enjoy yourself, Starlord</p>
+                <h1>Welcome!</h1>
+                <p>Spend all your money on these products!</p>
             </Container>
         </div>
     </Styles>
