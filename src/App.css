@@ -28,21 +28,9 @@
   color: #61dafb;
 }
 
-.btn-black{
-  background: transparent;
-  text-transform: capitalize;
-  font-size: .8rem !important;
-  color: black;
-  border-radius: 0!important;
-  border: .1rem solid black !important;
-}
-.btn-black:hover{
-  background: black !important;
-  color: white !important;
-}
 .cart-icon{
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 3rem;
   color: rgb(255, 208, 0);
 }
 .closer {
@@ -52,6 +40,41 @@
   z-index: 2;
 }
 
+.styledHeader1 {
+  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+  width: 50%;
+  padding: 2rem;
+  color: white;
+  font-size: 6rem; 
+  margin-bottom: 27rem;
+  margin-top: 13rem;
+}
+
+.heightChange{
+  height: 20rem;
+}
+.border {
+  border: 2px solid blue;
+}
+.cartColumns {
+  font-size: 2rem;
+}
+.addedBorder{
+  border-bottom: 2px solid #00bfff;
+}
+.blueText{
+  color: #00bfff;
+}
+.largeHeader{
+  font-size: 6rem;
+  border-bottom: 2px solid #000000;
+}
+
+@media only screen and (max-width: 400px) {
+  .heightChange{
+    height: 20rem !important;
+  }
+}
 
 @keyframes App-logo-spin {
   from {

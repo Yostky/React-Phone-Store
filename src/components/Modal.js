@@ -25,10 +25,10 @@ export default class Modal extends Component {
                                             onClick={()=>{
                                             closeModal();}}>
                                         </CloseButton>
-                                        <h5>Item added to the cart</h5>
+                                        <h3><strong>Item added to the cart</strong></h3>
                                         <img src={img} className='img-fluid' alt='product'/>
-                                        <h5>{title}</h5>
-                                        <h5 className='text-muted'>price : ${price}</h5>
+                                        <h4>{title}</h4>
+                                        <h4 className='text-muted'>price : <strong>${price}</strong></h4>
                                         <Link to='/'>
                                             <StyledButton onClick={()=>{
                                                 closeModal();

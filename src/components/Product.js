@@ -19,8 +19,8 @@ export default class Product extends Component {
                             <div className='img-container pt-3'
                                 onClick={()=> value.openDetail(id)}>
                                 <Link to='/details'>
-                                    <div className="lead text-center">{title}</div>
-                                    <img src={img} alt='product' className='card-img-top pb-1' style={{height:"25rem",width:"100%"}}></img>
+                                    <div className="lead blueText text-center">{title}</div>
+                                    <img src={img} alt='product' className='card-img-top pb-1 heightChange' style={{height:"25rem",width:"100%"}} ></img>
                                 </Link>
                                 <div className='d-flex px-5 justify-content-around align-items-center card-footer mb-0'>
                                     <div className='fs-1'><strong>${price}</strong></div>
@@ -55,6 +55,7 @@ const ProductWrapper = styled.div`
         transition: all .25s linear;
         border: 2px solid #acacac;
         box-shadow: 10px 10px 5px grey;
+        max-width: 290px;
     }
     &:hover{
         .card{

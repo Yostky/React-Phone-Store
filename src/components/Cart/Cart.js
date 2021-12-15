@@ -15,7 +15,7 @@ export default class Cart extends Component {
                     if(cart.length > 0){
                         return (
                             <React.Fragment>
-                                <div className='text-center'>Title</div>
+                                <div className='text-center cartColumns py-4 '><h1 className="largeHeader addedBorder"><strong>Your <span className="blueText">Cart</span></strong></h1></div>
                                 <CartColumns></CartColumns>
                                 <CartList value={value}/>
                                 <CartTotals value={value} history={this.props.history}></CartTotals>
